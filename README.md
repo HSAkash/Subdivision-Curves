@@ -5,7 +5,7 @@
 
 ## installation
 ```
-pip install -r requirements
+pip install -r requirements.txt
 ```
 
 ## Chaikin's Scheme algorithm
