@@ -20,3 +20,12 @@ pip install -r requirements
 <img src="images/fourPoint/01.png">
 <img src="images/fourPoint/02.png">
 
+
+# Author
+HSAkash
+* [Linkedin](https://www.linkedin.com/in/hemel-akash/)
+* [Kaggle](https://www.kaggle.com/hsakash)
+* [Facebook](https://www.facebook.com/hemel.akash.7/)
+
+Get more information about Subdivision Curves algorithm, go to the [documentation](https://geonum.gricad-pages.univ-grenoble-alpes.fr/geonum-pages/tp4.html).
+
