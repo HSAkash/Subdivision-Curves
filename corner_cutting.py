@@ -40,9 +40,12 @@ def isConnected(points):
 def corner_cutting(points, num_iter, a, b, is_connect=False):
     """
     Applies corner cutting algorithm to the given points
-    :param points: list of points
+    :param points: numpy array of points & shape (n, 2)
     :param num_iter: number of iterations
-    :return: list of points
+    :param a: floating point number
+    :param b: floating point number
+    :param is_connect: boolean
+    :return: list of points dtype(numpy array)
     """
     if num_iter == 0:
         return points

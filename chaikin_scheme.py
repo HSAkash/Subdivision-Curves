@@ -42,6 +42,7 @@ def chaikin_scheme(points, num_iter, is_connect=False):
     Applies chaikin's scheme to the given points
     :param points: numpy array of points & shape (n, 2)
     :param num_iter: number of iterations
+    :param is_connect: boolean
     :return: list of points dtype(numpy array)
     """
     if num_iter == 0:
