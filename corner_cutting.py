@@ -79,8 +79,57 @@ def corner_cutting(points, num_iter, a, b, is_connect=False):
     return corner_cutting(new_points, num_iter - 1, a, b, is_connect)
 
 
+def draw(points_dict, points, multi_line_thikness, single_line_thikness, single_line_color, axis_off):
+    """
+    Draws the points
+    :param points_dict: dictionary of points
+    :return: None
+    """
+    # plot the points
+    figsize = getFigureSize(points)
+    plt.figure(figsize=figsize)
+    plt.rcParams['lines.linewidth'] = multi_line_thikness
+    for key in points_dict:
+        plt.plot(points_dict[key][:, 0], points_dict[key][:, 1])
+    if axis_off:
+        plt.axis('off')
+    plt.show()
+
+
+    plt.figure(figsize=figsize)
+    plt.plot(
+        points_dict[1][:, 0],
+        points_dict[1][:, 1],
+        linewidth=single_line_thikness,
+        color=single_line_color
+    )
+    
+    if axis_off:
+        plt.axis('off')
+    plt.show()
+
+
 
 def main():
+    """Input the number of iterations and the points"""
+    # a input
+    a = float(input("Enter a value usually 0.1 :"))
+    # b input
+    b = float(input("Enter a value usually 0.6 :"))
+    # iteration input
+    num_iter = int(input("Enter the number of iterations: "))
+    # multiple points draw line thikness
+    multi_line_thikness = int(input("Enter the line thikness (all): "))
+    # single point draw line thikness
+    single_line_thikness = int(input("Enter the line thikness (single): "))
+    # single point draw line color
+    single_line_color = input("Enter the line color (single): ")
+    # axis off
+    axis_off = input("Enter 'y' if you want to turn off the axis: ")
+    axis_off = True if axis_off == 'y' else False
+
+
+
     # initialize the points
     # points = np.array([[0, 0], [1, 0], [1, 1], [0, 1], [0, 0]], dtype=np.float64)
     points = np.array([[0, 0], [0, 1], [1, 1], [1, 0], [2, 0], [2, 1], [3, 1], [3, 0]], dtype=np.float64)
@@ -90,13 +139,12 @@ def main():
     # add the points to the dictionary 
     points_dict[0] = points
     # call the function 
-    points = corner_cutting(points, 10, a, b, isConnected(points))
-    # plot the points
-    figsize = getFigureSize(points)
-    plt.figure(figsize=figsize)
-    for key in points_dict:
-        plt.plot(points_dict[key][:, 0], points_dict[key][:, 1])
-    plt.show()
+    points = corner_cutting(points, num_iter, a, b, isConnected(points))
+    
+
+
+    # draw the points
+    draw(points_dict, points, multi_line_thikness, single_line_thikness, single_line_color, axis_off)
 
 
 if __name__ == '__main__':
